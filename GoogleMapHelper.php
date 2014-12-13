@@ -198,7 +198,7 @@ class GoogleMapHelper extends AppHelper {
       }
     ";
     if(isset($latitude) && isset($longitude)) $map .="setCenterMap(new google.maps.LatLng({$latitude}, {$longitude}));";
-    else if(isset($address)) $map .="var centerLocation = geocodeAddress('{$address}','setCenter'); setCenterMap(centerLocation);";
+    else if(isset($address)) $map .="geocodeAddress('{$address}','setCenter');";
     else $map .="setCenterMap(new google.maps.LatLng({$this->defaultLatitude}, {$this->defaultLongitude}));";
     $map .= "
       function localize(){
