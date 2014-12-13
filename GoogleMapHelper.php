@@ -52,6 +52,8 @@ class GoogleMapHelper extends AppHelper {
   var $defaultHeight        = "800px";
   // CSS style for the map canvas
   var $defaultStyle         = "style";
+  // CSS class 
+  var $defautClass	    = "";
   // Default zoom
   var $defaultZoom          = 6;
   // Type of map (ROADMAP, SATELLITE, HYBRID or TERRAIN)
@@ -130,6 +132,7 @@ class GoogleMapHelper extends AppHelper {
     if (!isset($width))            $width        = $this->defaultWidth;
     if (!isset($height))           $height       = $this->defaultHeight;
     if (!isset($style))            $style        = $this->defaultStyle;
+    if (!isset($class))            $class        = $this->defaultClass;
     if (!isset($zoom))             $zoom         = $this->defaultZoom;
     if (!isset($type))             $type         = $this->defaultType;
     if (!isset($custom))           $custom       = $this->defaultCustom;
@@ -143,7 +146,7 @@ class GoogleMapHelper extends AppHelper {
     if (!isset($draggableMarker))  $draggableMarker = $this->defaultDraggableMarker;
 
 
-    $map = "<div id='$id' style='width:$width; height:$height; $style'></div>";
+    $map = "<div id='$id' style='width:$width; height:$height; $style' class='$class'></div>";
     $map .="
       <script>
         var markers = new Array();
